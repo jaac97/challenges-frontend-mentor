@@ -4,8 +4,12 @@
     --dark-grayish-blue: hsl(217, 19%, 35%);
     --dark-blackish-blue: hsl(219, 29%, 14%);
     --white: hsl(0, 0%, 100%);
+    /* --white-transparent: hsl(0, 0%, 90%); */
+    /* --white-transparent: hsl(0, 50%, 100%); */
     /* Neutral */
     --light-gray: hsl(0, 0%, 81%);
+    --intermediate-light-gray: hsla(0, 0%, 81%, .5);
+    --very-light-gray: hsla(0, 0%, 81%, .5);
     --light-grayish-blue: hsl(210, 46%, 95%);
     /* 
     "Verified Graduate" has the same color as the person's name with 50% opacity
@@ -30,4 +34,133 @@ html {
 * {
     margin: 0;
     padding: 0;
+}
+
+img {
+    max-width: 110%;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+}
+
+.container {
+    width: 90%;
+    max-width: 375px;
+    margin: auto;
+}
+
+.grid {
+    padding: 50px 0;
+    display: grid;
+    /* grid-template-rows: 450px repeat(2, 250px) repeat(2, 450px); */
+    row-gap: 15px;
+}
+
+.grid--card {
+    padding: 20px 0 20px 30px;
+    border-radius: 10px;
+}
+
+.grid__one {
+    /* grid-row: 1/2; */
+    background-color: var(--violet);
+    position: relative;
+    z-index: 10;
+}
+
+.grid__one::after {
+    content: '';
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    display: block;
+    height: 100px;
+    width: 130px;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.grid__two {
+    background-color: var(--dark-grayish-blue);
+}
+
+.grid__three,
+.grid__five {
+    background-color: var(--white);
+}
+
+.grid__four {
+    background-color: var(--dark-blackish-blue);
+}
+
+.header {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__name--dark {
+    color: var(--dark-blackish-blue) !important;
+}
+
+.header__verified--dark {
+    color: var(--dark-grayish-blue)!important;
+}
+
+.header__picture {
+    border-radius: 50%;
+    border: 3px solid var(--very-light-gray);
+    overflow: hidden;
+    width: 32px;
+    height: 35px;
+}
+
+.header__information {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+
+.header__name {
+    color: var(--light-gray);
+}
+
+.header__verified {
+    color: var(--very-light-gray);
+}
+
+.content {
+    padding-top: 20px;
+}
+
+.content--white {
+    color: var(--white);
+}
+
+.content--dark {
+    color: var(--dark-blackish-blue);
+}
+
+.content__header {
+    font-size: 20px;
+    font-weight: 600;
+    padding-right: 46px;
+}
+
+.content__text {
+    color: var(--intermediate-light-gray);
+    padding-top: 20px;
+    padding-right: 60px;
+}
+
+.content__white {
+    color: var(--white);
+}
+
+.content__text--dark {
+    color: var(--dark-grayish-blue) !important;
 }
